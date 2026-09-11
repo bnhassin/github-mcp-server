@@ -2,6 +2,7 @@ import { ThemeProvider, BaseStyles, Box } from "@primer/react";
 import type { ReactNode, CSSProperties } from "react";
 import { useEffect, useMemo } from "react";
 import type { McpUiHostContext } from "@modelcontextprotocol/ext-apps";
+import { Analytics } from "@vercel/analytics/react";
 import { FeedbackFooter } from "./FeedbackFooter";
 
 interface AppProviderProps {
@@ -49,6 +50,7 @@ export function AppProvider({ children, hostContext }: AppProviderProps) {
           <FeedbackFooter />
         </Box>
       </BaseStyles>
+      <Analytics />
     </ThemeProvider>
   );
 }
