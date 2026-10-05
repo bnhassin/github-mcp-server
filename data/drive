@@ -1,0 +1,8 @@
+import { Drive, Sandbox } from '@vercel/sandbox';
+
+const drive = await Drive.getOrCreate({ name: 'drive-data' });
+const sandbox = await Sandbox.create({
+  mounts: {
+    '/data': drive,
+  },
+});
